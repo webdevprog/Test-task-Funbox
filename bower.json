@@ -1,0 +1,23 @@
+{
+  "name": "test work",
+  "description": "This start template",
+  "main": "index.js",
+  "authors": [
+    "Vit"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.3.1",
+    "bootstrap4": "^4.1.1"
+  }
+}

@@ -1,0 +1,45 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+::placeholder {
+	color: #666;
+}
+
+::selection {
+	background-color: $color-primary;
+	color: $color-white;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-size: $base-font;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.65;
+	font-family: $default-font;
+	overflow-x: hidden;
+	color: $color-primary;
+	font-weight: 400;
+}
+
+.container {
+	width: 100%;
+	max-width: 1150px;
+	padding: 0 15px;
+	margin: auto;
+}
+
+.row {
+	display: flex;
+	margin: 0 -15px;
+}
+
+.col {
+	position: relative;
+	padding: 0 15px;
+	width: 100%;
+}
