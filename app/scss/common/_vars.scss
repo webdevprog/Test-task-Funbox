@@ -26,6 +26,7 @@ $color-indigo: 		#6610f2;
 $color-purple: 		#6f42c1;
 $color-pink: 		#e83e8c;
 $color-red: 		#dc3545;
+$color-light-red: 	#666666;
 $color-orange: 		#fd7e14;
 $color-yellow: 		#ffc107;
 $color-green: 		#28a745;
@@ -78,7 +79,8 @@ $line-height-base: 1.6;
 $default-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.2);
 $default-shadow-hover: 0 0 9px 1px rgba(0, 0, 0, 0.2);
 
-$products-title-size: 2.25rem;
+$products-title-size: 2.25rem; //36px
 $product-border-width: 4px;
 $product-border-radius: 12px;
-$product-weight-size: 2.625rem;
+$product-weight-size: 2.625rem; //42px
+$product-title-size: 2.9rem; //48px

@@ -1,12 +1,12 @@
 .product-cards {
     display: flex;
-    
+
     min-height: 100vh;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.25) 0%, transparent 10%, rgba(0, 0, 0, 0.25) 100%), url(../img/bg-products.jpg);
     background-repeat: repeat;
 
     &__title {
-        margin-bottom: ($spacer * 1.5);
+        margin-bottom: ($spacer * 2);
         color: $color-white;
         font-family: $font-family-display;
         font-size: $products-title-size;
@@ -16,15 +16,18 @@
 
     .row {
         justify-content: space-between;
-        align-items: center;
+        align-items: stretch;
     }
 
     .product-card {
         max-width: 345px;
+        margin-bottom: ($spacer * 4);
 
         &__container {
             position: relative;
             z-index: 1;
+            height: 100%;
+
             &:before {
                 content: '';
                 position: absolute;
@@ -37,6 +40,7 @@
                 background: linear-gradient(135deg, transparent 30px, $color-primary 0);
                 z-index: -1;
             }
+
             &:after {
                 content: '';
                 position: absolute;
@@ -55,34 +59,96 @@
         &__body {
             position: relative;
             background-color: $color-white;
-            padding: $spacer ($spacer * 2) ($spacer * 20) ($spacer * 3);
+            padding: $spacer ($spacer * 2) ($spacer * 19) ($spacer * 3);
             border-radius: $product-border-radius;
             background: linear-gradient(135deg, transparent 30px, $color-white 0);
             z-index: 1;
-            overflow: hidden;
-            margin-bottom: $spacer;
+            height: 100%;
             cursor: pointer;
 
             .product-card__subtitle {
-                
+                font-size: $font-size-regular;
+                color: $color-light-red;
+            }
+
+            .product-card__title {
+                font-size: $product-title-size;
+                color: $color-black;
+                line-height: 1.2;
+                margin: 0;
+            }
+
+            .product-card__type {
+                font-size: ($product-title-size / 2);
+                color: $color-black;
+            }
+
+            .product-card__stock {
+                margin-top: ($spacer / 2);
+                color: $color-light-red;
+                span {
+                    display: block;
+                }
             }
 
             .product-card__wieght {
                 position: absolute;
+                overflow: hidden;
+                bottom: 10px;
+                right: 15px;
+                z-index: 2;
+                height: 80px;
+                width: 80px;
                 font-size: $product-weight-size;
-                line-height: 1;
-                background-color: #fff;
-                bottom: 30px;
-                right: 5px;
-                border-radius: 50%;
+                line-height: 1.6;
                 text-align: center;
+                color: $color-white;
+                background-color: $color-primary;
+                border-radius: 50%;
+
                 span {
                     display: block;
+                    position: relative;
+                    top: -22px;
                     font-size: ($product-weight-size / 2);
                 }
-
-
             }
+
+            .product-card__img {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                background-position: -30px 0;
+                background-repeat: no-repeat;
+                height: 100%;
+                max-height: 270px;
+                width: 100%;
+            }
+
+            footer {
+                position: absolute;
+                overflow: hidden;
+                bottom: -70px;
+                left: 0;
+                z-index: 999;
+                height: 50px;
+                width: 100%;
+                text-align: center;
+                color: $color-white;
+                
+                .product-card__buy {
+                    a {
+                        color: $color-info;
+                        text-decoration: none;
+                        border-bottom: 1px dashed $color-info;
+                    }
+                }
+                .product-card__desc {
+                    display: none;
+                }
+            }
+
         }
     }
 }
