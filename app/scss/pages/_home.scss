@@ -35,9 +35,9 @@
                 left: -$product-border-width;
                 width: calc(100% + #{$product-border-width * 2});
                 height: calc(100% + #{$product-border-width * 2});
-                background-color: $color-primary;
+                background-color: $color-info;
                 border-radius: $product-border-radius;
-                background: linear-gradient(135deg, transparent 30px, $color-primary 0);
+                background: linear-gradient(135deg, transparent 30px, $color-info 0);
                 z-index: -1;
             }
 
@@ -54,12 +54,29 @@
                 cursor: default;
                 transform: rotate(45deg);
             }
+
+            &:hover {
+                &::before {
+                    background-color: $color-blue;
+                    background: linear-gradient(135deg, transparent 30px, $color-blue 0);
+                }
+
+                .product-card__wieght {
+                    background-color: $color-blue;
+                }
+
+                .product-card__buy {
+                    a {
+                        color: $color-blue;
+                    }
+                }
+            }
         }
 
         &__body {
             position: relative;
             background-color: $color-white;
-            padding: $spacer ($spacer * 2) ($spacer * 19) ($spacer * 3);
+            padding: $spacer ($spacer * 2) ($spacer * 18) ($spacer * 3);
             border-radius: $product-border-radius;
             background: linear-gradient(135deg, transparent 30px, $color-white 0);
             z-index: 1;
@@ -81,6 +98,7 @@
             .product-card__type {
                 font-size: ($product-title-size / 2);
                 color: $color-black;
+                font-weight: $font-weight-bold;
             }
 
             .product-card__stock {
@@ -103,7 +121,7 @@
                 line-height: 1.6;
                 text-align: center;
                 color: $color-white;
-                background-color: $color-primary;
+                background-color: $color-info;
                 border-radius: 50%;
 
                 span {
@@ -136,12 +154,15 @@
                 width: 100%;
                 text-align: center;
                 color: $color-white;
+                pointer-events: none;
                 
                 .product-card__buy {
                     a {
+                        display: inline-block;
                         color: $color-info;
                         text-decoration: none;
                         border-bottom: 1px dashed $color-info;
+                        pointer-events: auto;
                     }
                 }
                 .product-card__desc {
