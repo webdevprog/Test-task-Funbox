@@ -21,7 +21,7 @@ window.onload = function () {
 
                     case 'false':
                         product.setAttribute('data-select', 'true');
-                        product.addEventListener("mouseleave", addClassAfterEvents = function () {
+                        this.addEventListener("mouseleave", function () {
                             if (!productClass.contains('product-card_selecteffect')) {
                                 productClass.add('product-card_selecteffect');
                             }
@@ -31,7 +31,11 @@ window.onload = function () {
                     case 'true':
                         product.setAttribute('data-select', 'false');
                         productClass.remove('product-card_selecteffect');
-                        product.removeEventListener('mouseleave', addClassAfterEvents);
+                        this.addEventListener("mouseleave", function () {
+                            if (productClass.contains('product-card_selecteffect')) {
+                                productClass.remove('product-card_selecteffect');
+                            }
+                        });
                         break;
 
                     default:
