@@ -6,6 +6,7 @@
 3. Spacer.
 4. Customization Bootstrap
 5. Effects
+6. Product-card 
 */
 
 
@@ -25,10 +26,10 @@ $color-blue: 		#2ea8e6;
 $color-indigo: 		#6610f2;
 $color-purple: 		#6f42c1;
 $color-pink: 		#e83e8c;
-$color-red: 		#dc3545;
+$color-red: 		#d91667;
 $color-light-red: 	#666666;
 $color-orange: 		#fd7e14;
-$color-yellow: 		#ffc107;
+$color-yellow: 		#ffff66;
 $color-green: 		#28a745;
 $color-teal: 		#20c997;
 $color-cyan: 		#17a2b8;
@@ -79,8 +80,20 @@ $line-height-base: 1.6;
 $default-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.2);
 $default-shadow-hover: 0 0 9px 1px rgba(0, 0, 0, 0.2);
 
-$products-title-size: 2.25rem; //36px
+
+/* 6. Product-card */
+
+
+
 $product-border-width: 4px;
 $product-border-radius: 12px;
+
+$product-desc-size: 0.8125rem; //13px
+$products-title-size: 2.25rem; //36px
 $product-weight-size: 2.625rem; //42px
 $product-title-size: 2.9rem; //48px
+
+
+$product-color-select: #d91667;
+$product-color-select-hover: #e62e7a;
+$product-color-disable: rgba(255, 255, 255, .8);

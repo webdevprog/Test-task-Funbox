@@ -9,6 +9,8 @@ Mixin:
 7. bg-block.
 8. clear-list-style.
 9. css-triangle.
+10. breakpoint.
+11. cut-angle.
 */
 
 /* 1. font-face. */
@@ -102,12 +104,12 @@ Mixin:
 }
 
 /* 7. bg-block. */
-@mixin bg-block($img: false, $color: $color-black, $opacity: 0.8) {
-    @if #{$img} {
-      background-image: url(#{$img});
-    }
+@mixin bg-block($img: false, $color: $color-black, $opacity: 0.8, $index: 1) {
+    @if $img != 'false' {
+    background-image: url(#{$img});
     background-repeat: no-repeat;
     background-size: cover;
+    }
     position: relative;
     &:before {
       content: '';
@@ -118,6 +120,7 @@ Mixin:
       height: 100%;
       background-color: #{$color};
       opacity: $opacity;
+      z-index: $index;
     }
 }
 
@@ -163,4 +166,55 @@ Mixin:
     left: -($size);
     @include center('vertical');
   }
+}
+
+/* 10. breakpoint. */
+@mixin breakpoint($class, $value: max) {
+  $type-media: $value+'-width';
+  @if $class == xs {
+    @media ($type-media: 767px) { @content; }
+  }
+ 
+  @else if $class == sm {
+    @media ($type-media: 768px) { @content; }
+  }
+ 
+  @else if $class == md {
+    @media ($type-media: 992px) { @content; }
+  }
+ 
+  @else if $class == lg {
+    @media ($type-media: 1200px) { @content; }
+  }
+ 
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+/* 11. cut-angle. */
+
+@mixin cut-angle($bg-color, $area-cut, $position-cut) {
+  @if $position-cut == top-left {
+    $position-cut: 135deg;
+  }
+ 
+  @else if $position-cut == top-right {
+    $position-cut: 225deg;
+  }
+ 
+  @else if $position-cut == bottom-left {
+    $position-cut: 405deg;
+  }
+ 
+  @else if $position-cut == bottom-right {
+    $position-cut: 315deg;
+  }
+ 
+  @else {
+    @warn "Breakpoint mixin supports: top-left, top-right, bottom-left, bottom-right";
+  }
+
+  background-color: $bg-color; 
+  background: linear-gradient($position-cut, transparent $area-cut, $bg-color 0);
 }
